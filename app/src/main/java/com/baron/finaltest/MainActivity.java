@@ -55,16 +55,17 @@ public class MainActivity extends AppCompatActivity {
                 for(int i = 0; i< lines.length; i++) {
                     String line = lines[i];
                     String pointA = line.split(" ")[0];
-                    String xA = line.split(",")[0];
-                    String yA = line.split(",")[1];
-                    String xB = line.split(",")[0];
-                    String yB = line.split(",")[1];
+                    String pointB = line.split(" ")[1];
+                    String xA = pointA.split(",")[0];
+                    String yA = pointA.split(",")[1];
+                    String xB = pointB.split(",")[0];
+                    String yB = pointB.split(",")[1];
                     Point point1= new Point(Double.valueOf(xA), Double.valueOf(yA));
                     Point point2= new Point(Double.valueOf(xB), Double.valueOf(yB));
                     drawline(mat2,point1,point2);
 
                 }
-
+                
                 Utils.matToBitmap(mat,bitmap);
                 Utils.matToBitmap(mat2,bitmap2);
 
